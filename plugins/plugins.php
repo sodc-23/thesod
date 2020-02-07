@@ -15,26 +15,6 @@ function thesod_register_required_plugins() {
 			'force_deactivation' => false,
 			'external_url' => '',
 		),
-		/*array(
-			'name' => esc_html__('thesod Import', 'thesod'),
-			'slug' => 'thesod-import',
-			'source' => esc_url('http://democontent.codex-themes.com/plugins/thesod/recommended/thesod-import.zip'),
-			'required' => false,
-			'version' => '',
-			'force_activation' => false,
-			'force_deactivation' => false,
-			'external_url' => '',
-		),*/
-		array(
-			'name' => esc_html__('thesod Demo Import', 'thesod'),
-			'slug' => 'thesod-importer',
-			'source' => esc_url('http://democontent.codex-themes.com/plugins/thesod/recommended/thesod-importer.zip'),
-			'required' => false,
-			'version' => '',
-			'force_activation' => false,
-			'force_deactivation' => false,
-			'external_url' => '',
-		),
 		array(
 			'name' => esc_html__('LayerSlider WP', 'thesod'),
 			'slug' => 'LayerSlider',
@@ -144,45 +124,7 @@ function thesod_updater_plugin_load() {
 	if ( ! class_exists( 'TGM_Updater' ) ) {
 		require get_template_directory() . '/plugins/class-tgm-updater.php';
 	}
-	if(thesod_is_plugin_active('thesod-elements/thesod-elements.php')) {
-		$plugin_data = get_plugin_data(trailingslashit(WP_PLUGIN_DIR).'thesod-elements/thesod-elements.php');
-		$args = array(
-			'plugin_name' => esc_html__('thesod Theme Elements', 'thesod'),
-			'plugin_slug' => 'thesod-elements',
-			'plugin_path' => 'thesod-elements/thesod-elements.php',
-			'plugin_url'  => trailingslashit( WP_PLUGIN_URL ) . 'thesod-elements',
-			'remote_url'  => esc_url('http://democontent.codex-themes.com/plugins/thesod/required/thesod-elements.json'),
-			'version'     => $plugin_data['Version'],
-			'key'         => ''
-		);
-		$tgm_updater = new TGM_Updater( $args );
-	}
-	if(thesod_is_plugin_active('thesod-import/thesod-import.php')) {
-		$plugin_data = get_plugin_data(trailingslashit(WP_PLUGIN_DIR).'thesod-import/thesod-import.php');
-		$args = array(
-			'plugin_name' => esc_html__('thesod Import', 'thesod'),
-			'plugin_slug' => 'thesod-import',
-			'plugin_path' => 'thesod-import/thesod-import.php',
-			'plugin_url'  => trailingslashit( WP_PLUGIN_URL ) . 'thesod-import',
-			'remote_url'  => esc_url('http://democontent.codex-themes.com/plugins/thesod/recommended/thesod-import.json'),
-			'version'     => $plugin_data['Version'],
-			'key'         => ''
-		);
-		$tgm_updater = new TGM_Updater( $args );
-	}
-	if(thesod_is_plugin_active('thesod-importer/thesod-importer.php')) {
-		$plugin_data = get_plugin_data(trailingslashit(WP_PLUGIN_DIR).'thesod-importer/thesod-importer.php');
-		$args = array(
-			'plugin_name' => esc_html__('thesod Demo Import', 'thesod'),
-			'plugin_slug' => 'thesod-importer',
-			'plugin_path' => 'thesod-importer/thesod-importer.php',
-			'plugin_url'  => trailingslashit( WP_PLUGIN_URL ) . 'thesod-importer',
-			'remote_url'  => esc_url('http://democontent.codex-themes.com/plugins/thesod/recommended/thesod-importer.json'),
-			'version'     => $plugin_data['Version'],
-			'key'         => ''
-		);
-		$tgm_updater = new TGM_Updater( $args );
-	}
+	
 	if(thesod_is_plugin_active('LayerSlider/layerslider.php')) {
 		$plugin_data = get_plugin_data(trailingslashit(WP_PLUGIN_DIR).'LayerSlider/layerslider.php');
 		$args = array(

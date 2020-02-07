@@ -5973,8 +5973,7 @@ function thesod_theme_options_page(){
 	//wp_enqueue_code_editor( array( 'type' => 'text/html' ) );
 ?>
 <div class="wrap">
-	<div class="theme-title">
-		<img class="right-part" src="<?php echo esc_url(get_template_directory_uri().'/images/admin-images/theme-options-title-right.png'); ?>" alt="Codex Tuner" />
+	<div class="theme-title">		
 		<img class="left-part" src="<?php echo esc_url(get_template_directory_uri().'/images/admin-images/theme-options-title-left.png'); ?>" alt="Theme Options. thesod Business." />
 		<div style="clear: both;"></div>
 	</div>
@@ -5990,9 +5989,7 @@ function thesod_theme_options_page(){
 							<?php if(isset($category['subcats']) && count($category['subcats']) > 0) : ?>
 								<li><a href="<?php echo esc_url('#'.$name); ?>" style="background-image: url('<?php echo esc_url(get_template_directory_uri().'/images/admin-images/'.$name.'_icon.png'); ?>');"><?php print esc_html($category['title']); ?></a></li>
 							<?php endif; ?>
-						<?php endforeach; ?>
-						<li><a href="#backup" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/admin-images/backup_icon.png');"><?php esc_html_e('Backup', 'thesod'); ?></a></li>
-						<?php if(!defined('ENVATO_HOSTED_SITE')) : ?><li><a href="#activation" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/admin-images/activation_icon.png');"><?php esc_html_e('Theme activation', 'thesod'); ?></a></li><?php endif; ?>
+						<?php endforeach; ?>						
 					</ul>
 				<?php endif; ?>
 
